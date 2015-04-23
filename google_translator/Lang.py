@@ -5,9 +5,10 @@
 
 class Lang(object):
     # @AttributeType string
-    # 中文
+    # 南非语
     afrikaans = "af"
     # @AttributeType string
+    # 阿尔巴尼亚语
     albanian = "sq"
     # @AttributeType string
     # 中文简体
