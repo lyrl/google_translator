@@ -5,6 +5,10 @@ import urllib2
 import urllib
 from Lang import *
 
+# @ParamType TIME_OUT int
+# 默认5秒
+TIME_OUT = 5
+
 
 class GoogleConmunication(object):
     # 发送翻译请求到google服务器，返回翻译的内容
@@ -25,7 +29,7 @@ class GoogleConmunication(object):
         headers = {'User-Agent': 'Mozilla/5.0'}
         req = urllib2.Request(self.__baseUrl, data, headers)
 
-        raw = urllib2.urlopen(req).read()
+        raw = urllib2.urlopen(req, timeout=TIME_OUT).read()
 
         return self.parse_resutlt(raw)
 
@@ -39,7 +43,8 @@ class GoogleConmunication(object):
 
         index = raw.rfind(']],')
 
-        raw = raw[1:index+2]
+        raw = raw[1:index+2] + r''
+
         result_list = eval(raw)
 
         result = ''
