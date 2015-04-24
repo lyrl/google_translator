@@ -4,14 +4,20 @@ google translation api
 
 google翻译api，不需要key无任调用次数何限制
 
-### 使用方法
-#### 命令行
+### install
+
+```
+pip install google_translator
+```
+
+### Useage
+#### shell
 ```
 python Translator.py 'hello'
 	
 > 你好 
 ```
-#### 程序中调用
+#### programmatically
 
 ```
 t = Translator(Lang.Lang.chinese_simplified)
